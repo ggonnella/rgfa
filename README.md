@@ -47,11 +47,4 @@ when reading the documentation.
 
 ## References
 
-The manuscript describing the library has been presented at the
-German Conference on Bioinformatics 2016. Currently it is under review and
-available as a Peer Journal preprint:
-
-Gonnella G, Kurtz S. (2016) RGFA: powerful and convenient handling of
-assembly graphs. PeerJ Preprints 4:e2381v1
-https://doi.org/10.7287/peerj.preprints.2381v1
-
+Gonnella G, Kurtz S. (2016) RGFA: powerful and convenient handling of assembly graphs. PeerJ 4:e2681 https://doi.org/10.7717/peerj.2681 
