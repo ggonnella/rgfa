@@ -242,6 +242,23 @@ class Fixnum
   end
 end
 
+class Integer
+  # @!macro validate_gfa_field
+  def validate_gfa_field!(datatype, fieldname=nil)
+    if (datatype == :pos and self < 0)
+      raise RGFA::FieldParser::FormatError,
+        "Invalid content for field #{fieldname}\n"+
+        "Content: #{self.inspect}\n"+
+        "Datatype: #{datatype}"
+    elsif ![:i, :f, :Z].include?(datatype)
+      raise RGFA::FieldParser::FormatError,
+          "Wrong type (#{self.class}) for field #{fieldname}\n"+
+          "Content: #{self.inspect}\n"+
+          "Datatype: #{datatype}"
+    end
+  end
+end
+
 class RGFA::Line::Segment
   # @!macro validate_gfa_field
   def validate_gfa_field!(datatype, fieldname=nil)

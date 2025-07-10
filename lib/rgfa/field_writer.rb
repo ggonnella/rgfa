@@ -65,6 +65,11 @@ class Hash
   def default_gfa_datatype; :J; end
 end
 
+class Integer
+  # @!macro gfa_datatype
+  def default_gfa_datatype; :i; end
+end
+
 class Array
   # @!macro to_gfa_field
   def to_gfa_field(datatype: default_gfa_datatype)

@@ -18,7 +18,6 @@ class RGFA::ByteArray < Array
           "in array: #{self.inspect}"
       end
     end
-    self.trust
     return nil
   end
 
