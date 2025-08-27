@@ -45,6 +45,18 @@ class TestRGFA < Test::Unit::TestCase
     assert_nothing_raised { gfa.validate! }
   end
 
+  def test_equals
+    gfa1 = RGFA.new
+    gfa2 = RGFA.new
+    lines = ["H\tVN:Z:1.0","S\t1\tAAAA","S\t2\tBBBB",
+     "S\t3\tCCCC","L\t2\t+\t3\t+\t0M","L\t2\t+\t1\t+\t0M"]
+    lines.each {|l| gfa1 << l}
+    lines2 = ["H\tVN:Z:1.0","S\t2\tBBBB","S\t3\tCCCC",
+     "S\t1\tAAAA","L\t2\t+\t1\t+\t0M","L\t2\t+\t3\t+\t0M"]
+    lines2.each {|l| gfa2 << l}
+    assert_equal(gfa1.equals(gfa2), true)
+  end
+
   def test_to_s
     lines = ["H\tVN:Z:1.0","S\t1\t*","S\t2\t*","S\t3\t*",
      "L\t1\t+\t2\t-\t*","C\t1\t+\t3\t-\t12\t*","P\t4\t1+,2-\t*"]
